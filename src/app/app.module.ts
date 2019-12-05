@@ -5,7 +5,8 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { HttpClientModule } from "@angular/common/http";
 import { SimulationModule } from "./simulation/simulation.module";
-import { NavigationModule } from './navigation/navigation.module';
+import { NavigationModule } from "./navigation/navigation.module";
+import { EcheancierModule } from "./echeancier/echeancier.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,7 +15,8 @@ import { NavigationModule } from './navigation/navigation.module';
     AppRoutingModule,
     HttpClientModule,
     SimulationModule,
-    NavigationModule
+    NavigationModule,
+    EcheancierModule
   ],
   providers: [],
   bootstrap: [AppComponent]
