@@ -1,0 +1,72 @@
+<ng-container>
+  <div class="container">
+    <form [formGroup]="filterForm">
+      <div class="form-group">
+        <label for="purchaseAmountId">Montant de l'achat</label>
+        <input
+          type="number"
+          class="form-control"
+          id="purchaseAmountId"
+          name="purchaseAmount"
+          required
+          formControlName="purchaseAmount"
+        />
+        <!-- <small id="emailHelp" class="form-text text-muted"
+          >We'll never share your email with anyone else.</small
+        > -->
+      </div>
+      <div class="form-group">
+        <label for="loanAmountId">Montant du crédit</label>
+        <input
+          type="number"
+          class="form-control"
+          id="loanAmountId"
+          name="loanAmount"
+          required
+          formControlName="loanAmount"
+        />
+      </div>
+      <label for="category">Catégorie</label>
+      <select
+        class="browser-default custom-select mb-4"
+        id="category"
+        name="category"
+        formControlName="vehicleCategory"
+      >
+        <option selected>Catégories</option>
+        <option value="A">Catégorie A</option>
+        <option value="B">Catégorie B</option>
+      </select>
+
+      <div class="form-group">
+        <label for="duration">Durée du prêt</label>
+        <input
+          type="number"
+          class="form-control"
+          id="duration"
+          name="loanDuration"
+          required
+          formControlName="loanDuration"
+          min="12"
+          max="48"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="cost">Coût du prêt</label>
+        <input
+          type="number"
+          class="form-control"
+          id="cost"
+          name="loanCost"
+          formControlName="loanCost"
+        />
+      </div>
+
+      <button type="submit" class="btn btn-outline-primary mr-4 my-4">
+        Créer le contrat
+      </button>
+      <button class="btn btn-outline-danger mr-4">Annuler</button>
+    </form>
+  </div>
+</ng-container>
