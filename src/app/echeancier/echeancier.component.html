@@ -1,29 +1,26 @@
 <ng-container>
-  <div>
-    <div class="row">
-      <table class="table table-hover table-bordered table-sm">
-        <thead>
-          <tr>
-            <th scope="col" class="col-sm">Date</th>
-            <th scope="col" class="col-sm">Montant</th>
-            <th scope="col" class="col-sm">Montant cumulé</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let schedule of schedules">
-            <td>
-              {{ schedule.daate }}
-            </td>
-            <td>
-              {{ schedule.monthlyAmount }}
-            </td>
-            <td>
-              {{ schedule.cumulatedAmount }}
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <p>{{ schedule.date }}</p>
-    </div>
+  <div class=" mx-5">
+    <table class="table text-center">
+      <thead>
+        <tr>
+          <th scope="col">Date</th>
+          <th scope="col">Montant</th>
+          <th scope="col">Montant cumulé</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let schedule of schedules">
+          <th scope="row">
+            {{ schedule.daate }}
+          </th>
+          <td>
+            {{ schedule.monthlyAmount }}
+          </td>
+          <td>
+            {{ schedule.cumulatedAmount }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </ng-container>

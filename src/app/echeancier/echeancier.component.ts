@@ -11,6 +11,11 @@ export class EcheancierComponent implements OnInit {
       daate: "2019",
       monthlyAmount: 350,
       cumulatedAmount: 450
+    },
+    {
+      daate: "2018",
+      monthlyAmount: 350,
+      cumulatedAmount: 700
     }
   ];
 
