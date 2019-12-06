@@ -16,6 +16,7 @@ export class FormsSimulationComponent implements OnInit {
   loanDuration: number;
   // loanCost: number;
   createdSimulation: Simulation;
+  returnedSimulation: Simulation;
 
   filterForm = new FormGroup({
     purchaseAmount: new FormControl(""),
@@ -48,6 +49,16 @@ export class FormsSimulationComponent implements OnInit {
     );
     // this.createdSimulation = new Simulation();
     console.log(this.createdSimulation);
-    this.simulationService.postInformationSimulation(this.createdSimulation);
+    this.simulationService
+      .postInformationSimulation(this.createdSimulation)
+      .subscribe(
+        response => {
+          this.returnedSimulation = response as Simulation;
+          console.log(this.returnedSimulation);
+        },
+        error => {
+          console.log(error);
+        }
+      );
   }
 }

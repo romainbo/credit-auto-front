@@ -3,6 +3,9 @@ export class Simulation {
   loanAmount: number;
   vehicleCategory: string;
   loanDuration: number;
+  loanRate: number;
+  loanTotalCost: number;
+  monthlyPayment: number;
 
   constructor(
     purchaseAmount: number,

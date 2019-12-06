@@ -5,7 +5,7 @@ import {
   HttpErrorResponse
 } from "@angular/common/http";
 import { Simulation } from "../simulation/simulation";
-import { throwError } from "rxjs";
+import { throwError, Observable } from "rxjs";
 
 @Injectable({
   providedIn: "root"
@@ -29,13 +29,11 @@ export class SimulationService {
   }
 
   // Méthode pour envoyer les informations de la simulation et récupérer le taux d'intérêt calculé en java
-  postInformationSimulation(simulation: Simulation) {
-    console.log("coucou");
-    return this.httpClient
-      .post(this.url, JSON.stringify(simulation), this.httpOptions)
-      .subscribe((response: Response) => {
-        console.log(response);
-        console.log(response.error.error.text);
-      });
+  postInformationSimulation(simulation: Simulation): Observable<Simulation> {
+    return this.httpClient.post<Simulation>(
+      this.url,
+      JSON.stringify(simulation),
+      this.httpOptions
+    );
   }
 }
