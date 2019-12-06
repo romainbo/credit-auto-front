@@ -33,6 +33,7 @@ export class FormsSimulationComponent implements OnInit {
 
   submit() {
     this.purchaseAmount = this.filterForm.get("purchaseAmount").value;
+    console.log(this.purchaseAmount);
     this.loanAmount = this.filterForm.get("loanAmount").value;
     this.vehicleCategory = this.filterForm.get("vehicleCategory").value;
     this.loanDuration = this.filterForm.get("loanDuration").value;
