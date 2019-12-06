@@ -49,8 +49,5 @@ export class FormsSimulationComponent implements OnInit {
     // this.createdSimulation = new Simulation();
     console.log(this.createdSimulation);
     this.simulationService.postInformationSimulation(this.createdSimulation);
-    console.log(
-      this.simulationService.postInformationSimulation(this.createdSimulation)
-    );
   }
 }

@@ -35,6 +35,7 @@ export class SimulationService {
       .post(this.url, JSON.stringify(simulation), this.httpOptions)
       .subscribe((response: Response) => {
         console.log(response);
+        console.log(response.error.error.text);
       });
   }
 }
