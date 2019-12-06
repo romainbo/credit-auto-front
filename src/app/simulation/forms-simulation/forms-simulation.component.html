@@ -4,7 +4,7 @@
       Simulation de crédit auto
     </h2>
     <div class="col-6">
-      <form [formGroup]="filterForm">
+      <form [formGroup]="filterForm" (ngSubmit)="submit()">
         <div class="form-group">
           <label for="purchaseAmountId">Montant de l'achat</label>
           <input
@@ -56,7 +56,7 @@
           />
         </div>
 
-        <div class="form-group">
+        <!-- <div class="form-group">
           <label for="cost">Coût du prêt</label>
           <input
             type="number"
@@ -65,7 +65,7 @@
             name="loanCost"
             formControlName="loanCost"
           />
-        </div>
+        </div> -->
 
         <div class="d-flex justify-content-center align-items-center">
           <button type="submit" class="btn btn-outline-primary mr-4 my-4">
