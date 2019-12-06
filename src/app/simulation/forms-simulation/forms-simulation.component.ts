@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormControl, NgForm,  } from "@angular/forms";
+import { FormGroup, FormControl, NgForm } from "@angular/forms";
+import { BehaviorSubject } from "rxjs";
 
 @Component({
   selector: "app-forms-simulation",
@@ -11,22 +12,29 @@ export class FormsSimulationComponent implements OnInit {
   loanAmount: number;
   vehicleCategory: String;
   loanDuration: number;
-  loanCost: number;
+  // loanCost: number;
 
   filterForm = new FormGroup({
     purchaseAmount: new FormControl(""),
     loanAmount: new FormControl(""),
     vehicleCategory: new FormControl(""),
-    loanDuration: new FormControl(""),
-    loanCost: new FormControl("")
+    loanDuration: new FormControl("")
+    // loanCost: new FormControl("")
   });
 
   constructor() {}
 
-  ngOnInit() {}
-
-  submit() {
-    
+  ngOnInit() {
+    // this.filterForm$ = new BehaviorSubject({
+    //   set: this.filterForm.get("set").value,
+    //   classe: this.filterForm.get("classe").value
+    // });
   }
 
+  submit() {
+    this.purchaseAmount = this.filterForm.get("purchaseAmount").value;
+    this.loanAmount = this.filterForm.get("loanAmount").value;
+    this.vehicleCategory = this.filterForm.get("vehicleCategory").value;
+    this.loanDuration = this.filterForm.get("loanDuration").value;
+  }
 }
