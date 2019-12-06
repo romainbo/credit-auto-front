@@ -5,7 +5,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { HttpClientModule } from "@angular/common/http";
 import { SimulationModule } from "./simulation/simulation.module";
-import { NavigationModule } from './navigation/navigation.module';
+import { NavigationModule } from "./navigation/navigation.module";
 
 @NgModule({
   declarations: [AppComponent],
