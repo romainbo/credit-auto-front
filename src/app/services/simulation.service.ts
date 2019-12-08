@@ -1,9 +1,9 @@
-import { Injectable, ErrorHandler } from "@angular/core";
+import { Injectable, ErrorHandler } from '@angular/core';
 import {
   HttpClient,
   HttpHeaders,
   HttpErrorResponse
-} from "@angular/common/http";
+} from '@angular/common/http';
 import { Simulation } from "../simulation/simulation";
 import { throwError, Observable } from "rxjs";
 
@@ -13,7 +13,7 @@ import { throwError, Observable } from "rxjs";
 export class SimulationService {
   constructor(private httpClient: HttpClient) {}
 
-  url = "http://localhost:8080/creditAuto/simulation";
+  url = 'http://localhost:8080/creditAuto/simulation';
 
   // httpOptions = {
   //   headers: new HttpHeaders({
@@ -22,7 +22,8 @@ export class SimulationService {
   // };
 
   get httpOptions(): { headers: HttpHeaders } {
-    const headers = new HttpHeaders().set("Content-Type", "application/json");
+    const headers = new HttpHeaders({'Content-Type': 'application/json', Accept : 'application/json'});
+    console.log(headers);
     return {
       headers
     };

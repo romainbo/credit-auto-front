@@ -78,8 +78,17 @@
       </div>
       <div class="col-6">
         <p>Taux calculé</p>
+        <ng-container *ngIf="returnedSimulation?.loanRate">
+          {{ returnedSimulation.loanRate }}
+        </ng-container>
         <p>Cout total de l'emprunt</p>
+        <ng-container *ngIf="returnedSimulation?.loanTotalCost">
+          {{ returnedSimulation.loanTotalCost }}
+        </ng-container>
         <p>Echeancier</p>
+        <ng-container *ngIf="returnedSimulation?.monthlyPayment">
+          {{ returnedSimulation.monthlyPayment }}
+        </ng-container>
       </div>
     </div>
   </div>
