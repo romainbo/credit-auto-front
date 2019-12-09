@@ -52,7 +52,9 @@ export class FormsClientCreationComponent implements OnInit {
       this.mail
     );
 
-    this.clientCreationService.postNewClient(this.newClient);
+    this.clientCreationService
+      .postNewClient(this.newClient)
+      .subscribe(response => console.log(response));
 
     console.log(this.newClient);
   }

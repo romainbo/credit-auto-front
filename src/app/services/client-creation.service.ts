@@ -9,7 +9,7 @@ import { Observable } from "rxjs";
 export class ClientCreationService {
   constructor(private httpClient: HttpClient) {}
 
-  url = "http://localhost:8080/creditAuto/simulation";
+  url = "http://localhost:8080/creditAuto/nouveauClient";
 
   get httpOptions(): { headers: HttpHeaders } {
     const headers = new HttpHeaders().set("Content-Type", "application/json");
