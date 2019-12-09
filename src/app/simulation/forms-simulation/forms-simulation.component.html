@@ -70,9 +70,20 @@
 
           <div class="d-flex justify-content-center align-items-center">
             <button type="submit" class="btn btn-outline-primary mr-4 my-4">
-              Créer le contrat
+              Simuler
             </button>
-            <button class="btn btn-outline-danger mr-4">Annuler</button>
+            <ng-container *ngIf="isSimulated">
+              <div class="btn btn-outline-success mr-4 my-4">
+                Créer contrat
+              </div>
+            </ng-container>
+            <button
+              type="reset"
+              (click)="cancel()"
+              class="btn btn-outline-danger mr-4"
+            >
+              Annuler
+            </button>
           </div>
         </form>
       </div>

@@ -3,6 +3,7 @@ import { FormGroup, FormControl, NgForm } from "@angular/forms";
 import { BehaviorSubject, Observable } from "rxjs";
 import { Simulation } from "../simulation";
 import { SimulationService } from "src/app/services/simulation.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-forms-simulation",
@@ -18,6 +19,8 @@ export class FormsSimulationComponent implements OnInit {
   createdSimulation: Simulation;
   returnedSimulation: Simulation;
 
+  isSimulated = false;
+
   filterForm = new FormGroup({
     purchaseAmount: new FormControl(""),
     loanAmount: new FormControl(""),
@@ -26,7 +29,10 @@ export class FormsSimulationComponent implements OnInit {
     // loanCost: new FormControl("")
   });
 
-  constructor(private simulationService: SimulationService) {}
+  constructor(
+    private simulationService: SimulationService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     // this.filterForm$ = new BehaviorSubject({
@@ -48,17 +54,23 @@ export class FormsSimulationComponent implements OnInit {
       this.loanDuration
     );
     // this.createdSimulation = new Simulation();
-    console.log(this.createdSimulation);
     this.simulationService
       .postInformationSimulation(this.createdSimulation)
       .subscribe(
         response => {
           this.returnedSimulation = response as Simulation;
           console.log(this.returnedSimulation);
+          this.isSimulated = true;
         },
         error => {
           console.log(error);
         }
       );
+  }
+
+  cancel() {
+    this.filterForm.reset();
+    this.isSimulated = false;
+    this.router.navigate(["./simulation"]);
   }
 }
