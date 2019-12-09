@@ -1,0 +1,92 @@
+<ng-container>
+  <div class="container container-simulation ">
+    <h2 class="my-4 text-center font-weight-normal">
+      Création d'un nouveau client
+    </h2>
+    <div class="d-flex ">
+      <div class="col-12">
+        <form [formGroup]="creationForm" (ngSubmit)="submit()">
+          <div class="form-group">
+            <label for="firstNameId">Prénom</label>
+            <input
+              type="text"
+              class="form-control"
+              id="firstNameId"
+              name="firstName"
+              required
+              formControlName="firstName"
+            />
+          </div>
+          <div class="form-group">
+            <label for="lastNameId">Nom de famille</label>
+            <input
+              type="text"
+              class="form-control"
+              id="lastNameId"
+              name="lastName"
+              required
+              formControlName="lastName"
+            />
+          </div>
+          <label for="gender">Civilité</label>
+          <select
+            class="browser-default custom-select mb-4"
+            id="gender"
+            name="gender"
+            formControlName="gender"
+          >
+            <option value="male">Homme</option>
+            <option value="female">Femme</option>
+          </select>
+          <div class="form-group">
+            <label for="adressId" class="mr-4">Adresse</label>
+            <input
+              type="text"
+              class="form-control mr-4"
+              id="adressId"
+              name="adress"
+              required
+              formControlName="adress"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="birthDate">Date de naissance</label>
+            <input
+              type="date"
+              class="form-control"
+              id="birthDate"
+              name="birthDate"
+              required
+              formControlName="birthDate"
+            />
+          </div>
+          <div class="form-group">
+            <label for="mail">Adresse mail</label>
+            <input
+              type="email"
+              class="form-control"
+              id="mail"
+              name="mail"
+              required
+              formControlName="mail"
+            />
+          </div>
+
+          <div class="d-flex justify-content-center align-items-center">
+            <button type="submit" class="btn  btn-outline-success mr-4 my-4">
+              Créer un nouveau client
+            </button>
+            <button
+              type="reset"
+              (click)="cancel()"
+              class="btn btn-outline-danger mr-4"
+            >
+              Annuler
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</ng-container>

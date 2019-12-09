@@ -7,15 +7,6 @@ const routes: Routes = [
     path: "",
     redirectTo: "simulation",
     pathMatch: "full"
-  },
-  {
-    path: ":param",
-    redirectTo: "simulation",
-    pathMatch: "full"
-  },
-  {
-    path: "simulation",
-    loadChildren: "./simulation/simulation.module#SimulationModule"
   }
 ];
 

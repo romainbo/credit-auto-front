@@ -6,6 +6,7 @@ import { AppComponent } from "./app.component";
 import { HttpClientModule } from "@angular/common/http";
 import { SimulationModule } from "./simulation/simulation.module";
 import { NavigationModule } from "./navigation/navigation.module";
+import { ClientCreationModule } from "./client-creation/client-creation.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,7 +15,8 @@ import { NavigationModule } from "./navigation/navigation.module";
     AppRoutingModule,
     HttpClientModule,
     SimulationModule,
-    NavigationModule
+    NavigationModule,
+    ClientCreationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

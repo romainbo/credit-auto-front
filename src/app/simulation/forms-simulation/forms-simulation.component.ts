@@ -21,7 +21,7 @@ export class FormsSimulationComponent implements OnInit {
 
   isSimulated = false;
 
-  filterForm = new FormGroup({
+  simulationForm = new FormGroup({
     purchaseAmount: new FormControl(""),
     loanAmount: new FormControl(""),
     vehicleCategory: new FormControl(""),
@@ -35,18 +35,18 @@ export class FormsSimulationComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    // this.filterForm$ = new BehaviorSubject({
-    //   set: this.filterForm.get("set").value,
-    //   classe: this.filterForm.get("classe").value
+    // this.simulationForm$ = new BehaviorSubject({
+    //   set: this.simulationForm.get("set").value,
+    //   classe: this.simulationForm.get("classe").value
     // });
   }
 
   submit() {
-    this.purchaseAmount = this.filterForm.get("purchaseAmount").value;
+    this.purchaseAmount = this.simulationForm.get("purchaseAmount").value;
     console.log(this.purchaseAmount);
-    this.loanAmount = this.filterForm.get("loanAmount").value;
-    this.vehicleCategory = this.filterForm.get("vehicleCategory").value;
-    this.loanDuration = this.filterForm.get("loanDuration").value;
+    this.loanAmount = this.simulationForm.get("loanAmount").value;
+    this.vehicleCategory = this.simulationForm.get("vehicleCategory").value;
+    this.loanDuration = this.simulationForm.get("loanDuration").value;
     this.createdSimulation = new Simulation(
       this.purchaseAmount,
       this.loanAmount,
@@ -69,7 +69,7 @@ export class FormsSimulationComponent implements OnInit {
   }
 
   cancel() {
-    this.filterForm.reset();
+    this.simulationForm.reset();
     this.isSimulated = false;
     this.router.navigate(["./simulation"]);
   }
