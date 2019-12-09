@@ -19,6 +19,10 @@ export class FormsSimulationComponent implements OnInit {
   createdSimulation: Simulation;
   returnedSimulation: Simulation;
 
+  newDate: Date = new Date();
+  cumulatedMonthlyPayment: number;
+  monthlyAmount: number;
+
   isSimulated = false;
 
   filterForm = new FormGroup({
@@ -28,6 +32,22 @@ export class FormsSimulationComponent implements OnInit {
     loanDuration: new FormControl("")
     // loanCost: new FormControl("")
   });
+
+  schedules = [
+    {
+      newDate: this.newDate,
+      monthlyAmount: this.monthlyAmount,
+      cumulatedAmount: this.cumulatedMonthlyPayment += this.monthlyAmount
+    }
+  ];
+  /*
+  schedules = [
+    {
+      daate: Date.now,
+      monthlyAmount: this.returnedSimulation.monthlyPayment,
+      cumulatedAmount: this.returnedSimulation.monthlyPayment
+    }
+  ];*/
 
   constructor(
     private simulationService: SimulationService,
@@ -61,6 +81,7 @@ export class FormsSimulationComponent implements OnInit {
           this.returnedSimulation = response as Simulation;
           console.log(this.returnedSimulation);
           this.isSimulated = true;
+          this.monthlyAmount = this.returnedSimulation.monthlyPayment;
         },
         error => {
           console.log(error);
@@ -73,4 +94,22 @@ export class FormsSimulationComponent implements OnInit {
     this.isSimulated = false;
     this.router.navigate(["./simulation"]);
   }
+  /*
+  schedulePayment() {
+    console.log(this.returnedSimulation.monthlyPayment);
+    let cumulatedPayment = this.returnedSimulation.monthlyPayment;
+  }*/
+  /*
+  switchToNextMonth() {
+    this.currentDate.setMonth(this.currentDate.getMonth() + 1);
+    this.cdRef.detectChanges();
+  }
+
+  private finishDateMonth(loanDuration): void {
+    this.currentDate = new Date(
+      this.currentDate.getFullYear(),
+      this.currentDate.getMonth() + loanDuration,
+      this.currentDate.getDate()
+    );
+  }*/
 }

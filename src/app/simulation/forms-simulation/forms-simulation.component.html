@@ -87,10 +87,38 @@
           </div>
         </form>
       </div>
-      <div class="col-6">
-        <p>Taux calculé</p>
-        <p>Cout total de l'emprunt</p>
-        <p>Echeancier</p>
+      <div class="col-6 d-flex flex-column">
+        <div>
+          <p>Taux calculé</p>
+          <p>Cout total de l'emprunt</p>
+          <p>Echeancier</p>
+        </div>
+        <ng-container *ngIf="isSimulated">
+          <div class=" mx-5">
+            <table class="table text-center">
+              <thead>
+                <tr>
+                  <th scope="col">Date</th>
+                  <th scope="col">Montant</th>
+                  <th scope="col">Montant cumulé</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let schedule of schedules">
+                  <th scope="row">
+                    {{ schedule.newDate }}
+                  </th>
+                  <td>
+                    {{ schedule.monthlyAmount }}
+                  </td>
+                  <td>
+                    {{ schedule.cumulatedAmount }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </ng-container>
       </div>
     </div>
   </div>
