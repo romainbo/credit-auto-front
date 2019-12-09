@@ -1,9 +1,9 @@
-import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormControl, NgForm } from "@angular/forms";
-import { BehaviorSubject, Observable } from "rxjs";
-import { Simulation } from "../simulation";
-import { SimulationService } from "src/app/services/simulation.service";
-import { Router } from "@angular/router";
+import {Component, OnInit} from "@angular/core";
+import {FormGroup, FormControl, NgForm} from "@angular/forms";
+import {BehaviorSubject, Observable} from "rxjs";
+import {Simulation} from "../simulation";
+import {SimulationService} from "src/app/services/simulation.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: "app-forms-simulation",
@@ -32,7 +32,8 @@ export class FormsSimulationComponent implements OnInit {
   constructor(
     private simulationService: SimulationService,
     private router: Router
-  ) {}
+  ) {
+  }
 
   ngOnInit() {
     // this.simulationForm$ = new BehaviorSubject({

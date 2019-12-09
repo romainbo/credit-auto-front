@@ -1,12 +1,13 @@
-import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
+import {BrowserModule} from "@angular/platform-browser";
+import {NgModule} from "@angular/core";
 
-import { AppRoutingModule } from "./app-routing.module";
-import { AppComponent } from "./app.component";
-import { HttpClientModule } from "@angular/common/http";
-import { SimulationModule } from "./simulation/simulation.module";
-import { NavigationModule } from "./navigation/navigation.module";
-import { ClientCreationModule } from "./client-creation/client-creation.module";
+import {AppRoutingModule} from "./app-routing.module";
+import {AppComponent} from "./app.component";
+import {HttpClientModule} from "@angular/common/http";
+import {SimulationModule} from "./simulation/simulation.module";
+import {NavigationModule} from "./navigation/navigation.module";
+import {ClientCreationModule} from "./client-creation/client-creation.module";
+import {ClientSearchModule} from "./client-search/client-search.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,9 +17,11 @@ import { ClientCreationModule } from "./client-creation/client-creation.module";
     HttpClientModule,
     SimulationModule,
     NavigationModule,
-    ClientCreationModule
+    ClientCreationModule,
+    ClientSearchModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+}

@@ -4,7 +4,7 @@ export class Client {
   adress: String;
   birthDate: String;
   gender: String;
-  mail: String;
+  email: String;
 
   constructor(
     firstName: String,
@@ -12,13 +12,13 @@ export class Client {
     adress: String,
     birthDate: String,
     gender: String,
-    mail: String
+    email: String
   ) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.adress = adress;
     this.birthDate = birthDate;
     this.gender = gender;
-    this.mail = mail;
+    this.email = email;
   }
 }

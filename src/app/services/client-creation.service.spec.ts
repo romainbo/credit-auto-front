@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { ClientCreationService } from './client-creation.service';
+import {ClientCreationService} from './client-creation.service';
 
 describe('ClientCreationService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

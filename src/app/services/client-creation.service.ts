@@ -1,13 +1,14 @@
-import { Injectable, ErrorHandler } from "@angular/core";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Client } from "../client-creation/client";
-import { Observable } from "rxjs";
+import {Injectable, ErrorHandler} from "@angular/core";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {Client} from "../client-creation/client";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: "root"
 })
 export class ClientCreationService {
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) {
+  }
 
   url = "http://localhost:8080/creditAuto/nouveauClient";
 

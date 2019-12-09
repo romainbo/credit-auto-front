@@ -1,20 +1,20 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {FormsSimulationComponent} from './forms-simulation.component';
+import {FormClientSearchComponent} from './form-client-search.component';
 
-describe('FormsSimulationComponent', () => {
-  let component: FormsSimulationComponent;
-  let fixture: ComponentFixture<FormsSimulationComponent>;
+describe('FormClientSearchComponent', () => {
+  let component: FormClientSearchComponent;
+  let fixture: ComponentFixture<FormClientSearchComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [FormsSimulationComponent]
+      declarations: [FormClientSearchComponent]
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FormsSimulationComponent);
+    fixture = TestBed.createComponent(FormClientSearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

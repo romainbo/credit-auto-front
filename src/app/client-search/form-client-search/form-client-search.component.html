@@ -1,0 +1,54 @@
+<ng-container>
+  <div>
+    <div class="container container-simulation ">
+      <h2 class="my-4 text-center font-weight-normal">
+        Recherche d'un client
+      </h2>
+      <div class="d-flex ">
+        <div class="col-12">
+          <form [formGroup]="searchForm" (ngSubmit)="submit()">
+            <div class="form-group">
+              <label for="emailId">Email</label>
+              <input
+                type="text"
+                class="form-control"
+                id="emailId"
+                name="email"
+                required
+                formControlName="email"
+              />
+            </div>
+            <div class="d-flex justify-content-center align-items-center">
+              <button type="submit" class="btn  btn-outline-primary mr-4 my-4">
+                Rechercher client
+              </button>
+              <button type="reset" class="btn btn-outline-danger mr-4">
+                Annuler
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="container container-simulation" *ngIf="!isSearched">
+      <h2 class="my-4 text-center font-weight-normal">
+        <a [routerLink]="['/nouveauClient']">Nouveau client</a>
+      </h2>
+    </div>
+    <div class="container container-simulation" *ngIf="isSearched">
+      <h2 class="my-4 text-center font-weight-normal">
+        Client Trouvé
+      </h2>
+
+<!--      <p>{{foundClient.firstName}}</p>-->
+<!--      <p>{{foundClient.lastName}}</p>-->
+<!--      <p>{{foundClient.adress}}</p>-->
+        <p>Prenom Client</p>
+        <p>Nom Client</p>
+        <p>Adresse Client</p>
+      <button type="button" class="btn  btn-outline-success mr-4 my-4">
+        Valider
+      </button>
+    </div>
+  </div>
+</ng-container>

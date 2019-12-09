@@ -1,8 +1,8 @@
-import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormControl } from "@angular/forms";
-import { Client } from "../client";
-import { ClientCreationService } from "src/app/services/client-creation.service";
-import { Router } from "@angular/router";
+import {Component, OnInit} from "@angular/core";
+import {FormGroup, FormControl} from "@angular/forms";
+import {Client} from "../client";
+import {ClientCreationService} from "src/app/services/client-creation.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: "app-forms-client-creation",
@@ -15,7 +15,7 @@ export class FormsClientCreationComponent implements OnInit {
   adress: String;
   birthDate: String;
   gender: String;
-  mail: String;
+  email: String;
   newClient: Client;
 
   creationForm = new FormGroup({
@@ -24,16 +24,18 @@ export class FormsClientCreationComponent implements OnInit {
     adress: new FormControl(""),
     birthDate: new FormControl(""),
     gender: new FormControl(""),
-    mail: new FormControl("")
+    email: new FormControl("")
     // loanCost: new FormControl("")
   });
 
   constructor(
     private clientCreationService: ClientCreationService,
     private router: Router
-  ) {}
+  ) {
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   submit() {
     this.firstName = this.creationForm.get("firstName").value;
@@ -41,7 +43,7 @@ export class FormsClientCreationComponent implements OnInit {
     this.adress = this.creationForm.get("adress").value;
     this.birthDate = this.creationForm.get("birthDate").value;
     this.gender = this.creationForm.get("gender").value;
-    this.mail = this.creationForm.get("mail").value;
+    this.email = this.creationForm.get("email").value;
 
     this.newClient = new Client(
       this.firstName,
@@ -49,7 +51,7 @@ export class FormsClientCreationComponent implements OnInit {
       this.adress,
       this.birthDate,
       this.gender,
-      this.mail
+      this.email
     );
 
     this.clientCreationService
@@ -61,6 +63,6 @@ export class FormsClientCreationComponent implements OnInit {
 
   cancel() {
     this.creationForm.reset();
-    this.router.navigate(["./nouveauClient"]);
+    this.router.navigate(["./searchclient"]);
   }
 }
