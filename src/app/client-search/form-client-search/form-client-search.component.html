@@ -22,19 +22,12 @@
               <button type="submit" class="btn  btn-outline-primary mr-4 my-4">
                 Rechercher client
               </button>
-              <button type="reset" class="btn btn-outline-danger mr-4">
-                Annuler
-              </button>
             </div>
           </form>
         </div>
       </div>
     </div>
-    <div class="container container-simulation" *ngIf="!isSearched">
-      <h2 class="my-4 text-center font-weight-normal">
-        <a [routerLink]="['/nouveauClient']">Nouveau client</a>
-      </h2>
-    </div>
+
     <div class="container container-simulation" *ngIf="isSearched">
       <h2 class="my-4 text-center font-weight-normal">
         Client Trouvé
@@ -49,6 +42,11 @@
       <button type="button" class="btn  btn-outline-success mr-4 my-4">
         Valider
       </button>
+    </div>
+    <div class="container container-simulation" >
+      <h2 class="my-4 text-center font-weight-normal">
+        <a [routerLink]="['/nouveauClient']">Nouveau client</a>
+      </h2>
     </div>
   </div>
 </ng-container>
