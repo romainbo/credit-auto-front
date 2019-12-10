@@ -12,11 +12,11 @@ export class ClientSearchService {
   constructor(private httpClient: HttpClient) {
   }
 
-  url = "http://localhost:8080/creditAuto/searchclient";
+  url = "http://localhost:8080/creditAuto/searchclient?email=";
   searchForm$: Subject<string> = new Subject();
 
   get httpOptions(): { headers: HttpHeaders } {
-    const headers = new HttpHeaders().set("Content-Type", "application/json");
+    const headers = new HttpHeaders({'Content-Type' : 'application/json', Accept : 'application/json', 'Allow-Control-Access-Origin' : '*'});
     return {
       headers
     };
@@ -24,8 +24,8 @@ export class ClientSearchService {
 
   getClientByEmail(email:string): Observable<Client> {
   return this.httpClient.get<Client>(
-    this.url,
+    this.url+`${email}`,
     this.httpOptions
-  );
+    );
   }
 }

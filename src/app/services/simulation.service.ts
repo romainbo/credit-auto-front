@@ -23,7 +23,7 @@ export class SimulationService {
   // };
 
   get httpOptions(): { headers: HttpHeaders } {
-    const headers = new HttpHeaders().set("Content-Type", "application/json");
+    const headers = new HttpHeaders({'Content-Type' : 'application/json', Accept : 'application/json'});
     return {
       headers
     };
