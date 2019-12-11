@@ -32,10 +32,6 @@
       <h2 class="my-4 text-center font-weight-normal">
         Client Trouvé
       </h2>
-
-      
-     
-     
         <p>Prenom Client</p>
         <p>{{foundClient?.firstName}}</p>
         <p>Nom Client</p>
@@ -43,7 +39,7 @@
         <p>Adresse Client</p>
         <p>{{foundClient?.adress}}</p>
       <button type="button" class="btn  btn-outline-success mr-4 my-4">
-        Valider
+        <a [routerLink]="['/createContract']" [state]="{simu: simul, data: foundClient}">Valider</a>
       </button>
     </div>
     <div class="container container-simulation" >
@@ -53,3 +49,4 @@
     </div>
   </div>
 </ng-container>
+

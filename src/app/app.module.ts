@@ -8,6 +8,8 @@ import {SimulationModule} from "./simulation/simulation.module";
 import {NavigationModule} from "./navigation/navigation.module";
 import {ClientCreationModule} from "./client-creation/client-creation.module";
 import {ClientSearchModule} from "./client-search/client-search.module";
+import { ContractModule } from './contract/contract.module';
+import * as moment from 'moment';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,7 +20,8 @@ import {ClientSearchModule} from "./client-search/client-search.module";
     SimulationModule,
     NavigationModule,
     ClientCreationModule,
-    ClientSearchModule
+    ClientSearchModule,
+    ContractModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

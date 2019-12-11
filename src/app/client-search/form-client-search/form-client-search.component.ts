@@ -6,6 +6,7 @@ import {switchMap} from "rxjs/operators";
 import {Client} from "../../client-creation/client";
 import { Router } from '@angular/router';
 import { Simulation } from 'src/app/simulation/simulation';
+import { ContractModule } from 'src/app/contract/contract.module';
 
 @Component({
   selector: 'app-form-client-search',
