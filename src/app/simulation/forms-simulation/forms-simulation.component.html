@@ -74,7 +74,7 @@
             </button>
             <ng-container *ngIf="isSimulated">
               <div class="btn btn-outline-success mr-4 my-4">
-                <a [routerLink]="['/searchclient']">Créer contrat</a>
+                <a [routerLink]="['/searchclient']" [state]="{data: returnedSimulation}">Créer contrat</a>
               </div>
             </ng-container>
             <button

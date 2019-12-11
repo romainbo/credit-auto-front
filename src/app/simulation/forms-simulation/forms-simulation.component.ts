@@ -31,7 +31,7 @@ export class FormsSimulationComponent implements OnInit {
 
   constructor(
     private simulationService: SimulationService,
-    private router: Router
+    private router: Router,
   ) {
   }
 

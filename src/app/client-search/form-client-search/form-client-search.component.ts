@@ -4,6 +4,8 @@ import {ClientSearchService} from "../../services/client-search.service";
 import {BehaviorSubject, merge, Observable} from "rxjs";
 import {switchMap} from "rxjs/operators";
 import {Client} from "../../client-creation/client";
+import { Router } from '@angular/router';
+import { Simulation } from 'src/app/simulation/simulation';
 
 @Component({
   selector: 'app-form-client-search',
@@ -15,6 +17,7 @@ export class FormClientSearchComponent implements OnInit {
   email: string;
   isSearched = false;
   foundClient : Client;
+  simul: Simulation
 
 
   searchForm = new FormGroup(
@@ -23,10 +26,12 @@ export class FormClientSearchComponent implements OnInit {
     }
   )
 
-  constructor(private clientSearchService: ClientSearchService) {
+  constructor(private clientSearchService: ClientSearchService, private router: Router) {
   }
 
   ngOnInit() {
+    this.simul = window.history.state.data;
+    console.log(this.simul);
   }
 
   submit() {
