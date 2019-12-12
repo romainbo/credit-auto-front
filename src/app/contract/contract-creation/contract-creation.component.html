@@ -3,5 +3,9 @@
 {{ contract.paymentStartDate | date:'yyyy/MM/dd' }}
 {{ contract.paymentEndDate | date:'yyyy/MM/dd' }}
 
+<ng-container *ngFor="let con of contract | keyvalue">
+    {{ con?.key }} {{ con?.value }}
+</ng-container>
+
 
 <button (click)="submitContract(contract)">Valider</button>

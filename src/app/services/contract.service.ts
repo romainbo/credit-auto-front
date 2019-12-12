@@ -3,6 +3,7 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { ContractModule } from '../contract/contract.module';
 import { Observable } from 'rxjs';
 import { Client } from '../client-creation/client';
+import { Contract } from '../contract/contract';
 
 @Injectable({
   providedIn: 'root'
@@ -22,10 +23,10 @@ export class ContractService {
 
 
   }  // Méthode pour envoyer les informations du contrat et récupérer un boolean si c'est ok
-  postInformationContract(contractPassed: ContractModule): Observable<ContractModule> {
+  postInformationContract(contractPassed: Contract): Observable<Contract> {
     console.log('########### THERE');
     console.log(JSON.stringify(contractPassed));
-    return this.httpClient.post<ContractModule>(
+    return this.httpClient.post<Contract>(
       this.url,
       JSON.stringify(contractPassed),
       this.httpOptions

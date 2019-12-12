@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { ContractModule } from '../contract.module';
 import * as moment from 'moment';
 import { ContractService } from 'src/app/services/contract.service';
+import { Contract } from '../contract';
 
 @Component({
   selector: 'app-contract-creation',
@@ -14,7 +15,7 @@ import { ContractService } from 'src/app/services/contract.service';
 export class ContractCreationComponent implements OnInit {
 simulation: Simulation;
 client: Client;
-contract: ContractModule;
+contract: Contract;
 dateTemp: number;
 mtnt: any;
 test: any;
@@ -33,8 +34,7 @@ test: any;
   ngOnInit() {
     this.simulation = window.history.state.simu;
     this.client = window.history.state.data;
-
-    this.contract = new ContractModule();
+    this.contract = new Contract();
     this.contract.client = this.client;
     //this.contract.returnedSimulation = this.simulation;
     this.contract.loanDuration = this.simulation.loanDuration;
@@ -49,7 +49,7 @@ test: any;
     this.contract.closureDate = null;
   }
 
-  submitContract(contract: ContractModule){
+  submitContract(contract: Contract){
     /*this.contract = new ContractModule();
     this.contract.returnedClient = this.client;
     this.contract.returnedSimulation = this.simulation;
