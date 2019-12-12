@@ -78,6 +78,8 @@
                 <button
                   type="button"
                   class="btn  btn-outline-success  mr-4 my-4"
+                  [routerLink]="['/createContract']"
+                  [state]="{ simu: simul, data: foundClient }"
                 >
                   Ajouter un contrat à ce client
                 </button>

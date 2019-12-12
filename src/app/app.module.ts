@@ -10,7 +10,7 @@ import { ClientCreationModule } from './client-creation/client-creation.module';
 import { ClientSearchModule } from './client-search/client-search.module';
 import { AuthenticationModule } from './authentication/authentication.module';
 import { ContractModule } from './contract/contract.module';
-// import * as moment from 'moment';
+import * as moment from 'moment';
 
 @NgModule({
   declarations: [AppComponent],
