@@ -35,23 +35,22 @@ test: any;
     this.client = window.history.state.data;
 
     this.contract = new ContractModule();
-    this.contract.returnedClient = this.client;
-    this.contract.returnedSimulation = this.simulation;
+    this.contract.client = this.client;
+    //this.contract.returnedSimulation = this.simulation;
+    this.contract.loanDuration = this.simulation.loanDuration;
+    this.contract.purchaseAmount = this.simulation.purchaseAmount;
+    this.contract.loanTotalCost = this.simulation.loanTotalCost;
     this.contract.contractNumber = 3489;
+    this.contract.vehicleCategory = this.simulation.vehicleCategory;
+    this.contract.loanRate = this.simulation.loanRate;
     this.mtnt = moment();
-
     this.contract.paymentStartDate = moment().format('YYYY-MM-DD');
-    this.contract.paymentEndDate = (this.mtnt.add(this.contract.returnedSimulation.loanDuration, 'months')).format('YYYY-MM-DD');
+    this.contract.paymentEndDate = (this.mtnt.add(this.contract.loanDuration, 'months')).format('YYYY-MM-DD');
     this.contract.closureDate = null;
-
-
-    console.log(this.simulation + "simul");
-    console.log(this.client + "client");
-    console.log(JSON.stringify(this.contract) + "contract");
   }
 
-  submitContract(contrat: ContractModule){
-    this.contract = new ContractModule();
+  submitContract(contract: ContractModule){
+    /*this.contract = new ContractModule();
     this.contract.returnedClient = this.client;
     this.contract.returnedSimulation = this.simulation;
     this.contract.contractNumber = 3489;
@@ -59,9 +58,8 @@ test: any;
 
     this.contract.paymentStartDate = moment().format('YYYY-MM-DD');
     this.contract.paymentEndDate = (this.mtnt.add(this.contract.returnedSimulation.loanDuration, 'months')).format('YYYY-MM-DD');
-    this.contract.closureDate = null;
-    
-    this.contractService.postInformationContract(contrat).subscribe(
+    this.contract.closureDate = null;*/    
+    this.contractService.postInformationContract(contract).subscribe(
       response => {
         console.log(response);
       },

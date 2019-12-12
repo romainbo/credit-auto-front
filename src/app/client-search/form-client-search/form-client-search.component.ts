@@ -44,8 +44,6 @@ export class FormClientSearchComponent implements OnInit {
       .subscribe(client =>
       this.foundClient = client);
 
-
-
     console.log(this.foundClient);
   }
 }

@@ -21,11 +21,14 @@ export class ContractModule {
   contractNumber: number;
   paymentStartDate: string;
   paymentEndDate: string;
+  purchaseAmount: number;
   closureDate: string;
   loanTotalCost: number;
   loanRate: number;
-  returnedClient: Client;
-  returnedSimulation: Simulation;
+  loanDuration: number;
+  vehicleCategory: string;
+  client: Client;
+ // returnedSimulation: Simulation;
 
   constructor(){
 
