@@ -43,6 +43,8 @@ test: any;
     this.contract.contractNumber = 3489;
     this.contract.vehicleCategory = this.simulation.vehicleCategory;
     this.contract.loanRate = this.simulation.loanRate;
+    this.contract.monthlyPayment = this.simulation.monthlyPayment;
+    this.contract.loanAmount = this.simulation.loanAmount;
     this.mtnt = moment();
     this.contract.paymentStartDate = moment().format('YYYY-MM-DD');
     this.contract.paymentEndDate = (this.mtnt.add(this.contract.loanDuration, 'months')).format('YYYY-MM-DD');

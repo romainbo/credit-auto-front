@@ -1,11 +1,47 @@
-<p>contract-creation works!</p>
-{{ contract | json }}
-{{ contract.paymentStartDate | date:'yyyy/MM/dd' }}
-{{ contract.paymentEndDate | date:'yyyy/MM/dd' }}
+<!--<ng-container *ngFor="let con of contract | keyvalue">
+    {{ con?.key }} : {{ con?.value }}
+</ng-container>-->
 
-<ng-container *ngFor="let con of contract | keyvalue">
-    {{ con?.key }} {{ con?.value }}
+<ng-container >
+    <table class="table table-hover">
+           <div class="d-flex w-100 justify-content-between">
+               <tbody>
+                    <tr><td> <h5 class="mb-1">Numero de contrat </h5></td>
+                        <td><strong>{{ contract.contractNumber }}</strong></td></tr>
+                       <tr><td><h5 class="mb-1">Debut de contrat </h5> </td>
+                      <td><strong>{{ contract.paymentStartDate | date:'yyyy/MM/dd' }}</strong></td></tr>
+                       <tr><td><h5 class="mb-1">Fin de contrat </h5> </td>
+                        <td><strong>{{ contract.paymentEndDate | date:'yyyy/MM/dd' }}</strong></td></tr>
+                       <tr><td><h5 class="mb-1">Cloture du contrat </h5> </td>
+                        <td><strong>{{ contract.closureDate | date:'yyyy/MM/dd' }}</strong></td></tr>
+                       <tr><td><h5 class="mb-1">Taux d'emprunt </h5> </td>
+                        <td><strong>{{ contract.loanRate }}</strong></td></tr>
+                       <tr><td><h5 class="mb-1">Cout total du credit </h5> </td>
+                        <td><strong>{{ contract.loanTotalCost }}</strong></td></tr>
+                       <tr><td> <h5 class="mb-1">Somme empruntee </h5> </td>
+                        <td><strong>{{ contract.loanAmount }}</strong></td></tr>
+                       <tr><td><h5 class="mb-1">Duree du credit </h5></td>
+                        <td> <strong>{{ contract.loanDuration }}</strong></td></tr>
+                       <tr><td> <h5 class="mb-1">Montant de la mensualite </h5> </td>
+                        <td><strong>{{ contract.monthlyPayment }}</strong></td></tr>
+                       <tr><td> <h5 class="mb-1">Montant d'achat </h5> </td>
+                        <td><strong>{{ contract.purchaseAmount }}</strong></td></tr>
+                       <tr><td><h5 class="mb-1">Categorie du vehicule </h5> </td>
+                        <td><strong>{{ contract.vehicleCategory }}</strong></td></tr>
+                       <tr><td> <h5 class="mb-1">Nom du client </h5> </td>
+                        <td><strong>{{ contract.client.firstName }}</strong></td></tr>
+                       <tr><td><h5 class="mb-1">Prenom du client </h5> </td>
+                        <td><strong>{{ contract.client.lastName }}</strong></td></tr>
+                       <tr><td> <h5 class="mb-1">Civilite </h5> </td>
+                        <td><strong>{{ contract.client.gender }}</strong></td></tr>
+                       <tr><td><h5 class="mb-1">Adresse du client </h5> </td>
+                        <td><strong>{{ contract.client.adress }}</strong></td></tr>
+                       <tr><td><h5 class="mb-1">Date de naissance du client </h5></td>
+                        <td> <strong>{{ contract.client.birthDate | date:'yyyy/MM/dd'}}</strong></td></tr>
+                       <tr><td><h5 class="mb-1">Adresse email du client </h5> </td>
+                        <td><strong>{{ contract.client.email }}</strong></td></tr>
+               </tbody>
+        </div>
+      </table>
 </ng-container>
-
-
 <button (click)="submitContract(contract)">Valider</button>
