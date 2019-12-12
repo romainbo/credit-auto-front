@@ -9,7 +9,9 @@ export class Contract {
     loanTotalCost: number;
     loanRate: number;
     loanDuration: number;
+    loanAmount: number;
     vehicleCategory: string;
+    monthlyPayment: number;
     client: Client;
 
     constructor() {}
