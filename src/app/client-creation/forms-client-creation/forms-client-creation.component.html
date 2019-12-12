@@ -1,10 +1,10 @@
 <ng-container>
-  <div class="container container-simulation ">
+  <div class="container ">
     <h2 class="my-4 text-center font-weight-normal">
       Création d'un nouveau client
     </h2>
-    <div class="d-flex ">
-      <div class="col-12">
+    <div class="d-flex justify-content-center">
+      <div class="col-8">
         <form [formGroup]="creationForm" (ngSubmit)="submit()">
           <div class="form-group">
             <label for="firstNameId">Prénom</label>
@@ -75,7 +75,7 @@
 
           <div class="d-flex justify-content-center align-items-center">
             <button type="submit" class="btn  btn-outline-success mr-4 my-4">
-              Créer un nouveau client
+              Ajouter un contrat à ce client
             </button>
             <button
               type="reset"
