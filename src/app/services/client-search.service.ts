@@ -16,7 +16,7 @@ export class ClientSearchService {
   searchForm$: Subject<string> = new Subject();
 
   get httpOptions(): { headers: HttpHeaders } {
-    const headers = new HttpHeaders({'Content-Type' : 'application/json', Accept : 'application/json', 'Allow-Control-Access-Origin' : '*'});
+    const headers = new HttpHeaders({'Content-Type' : 'application/json', Accept : 'application/json'});
     return {
       headers
     };

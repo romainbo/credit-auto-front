@@ -5,6 +5,7 @@ import {FormsSimulationComponent} from "./forms-simulation/forms-simulation.comp
 import {FormsModule, ReactiveFormsModule, FormControl} from "@angular/forms";
 import {SimulationService} from "../services/simulation.service";
 import {SimulationRoutingModule} from "./simulation-routing.module";
+import { ContractModule } from '../contract/contract.module';
 
 // import { Simulation } from "./simulation";
 

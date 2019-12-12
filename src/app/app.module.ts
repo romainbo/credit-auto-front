@@ -1,14 +1,16 @@
-import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from "./app-routing.module";
-import { AppComponent } from "./app.component";
-import { HttpClientModule } from "@angular/common/http";
-import { SimulationModule } from "./simulation/simulation.module";
-import { NavigationModule } from "./navigation/navigation.module";
-import { ClientCreationModule } from "./client-creation/client-creation.module";
-import { ClientSearchModule } from "./client-search/client-search.module";
-import { AuthenticationModule } from "./authentication/authentication.module";
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SimulationModule } from './simulation/simulation.module';
+import { NavigationModule } from './navigation/navigation.module';
+import { ClientCreationModule } from './client-creation/client-creation.module';
+import { ClientSearchModule } from './client-search/client-search.module';
+import { AuthenticationModule } from './authentication/authentication.module';
+import { ContractModule } from './contract/contract.module';
+// import * as moment from 'moment';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +22,8 @@ import { AuthenticationModule } from "./authentication/authentication.module";
     NavigationModule,
     ClientCreationModule,
     ClientSearchModule,
-    AuthenticationModule
+    AuthenticationModule,
+    ContractModule
   ],
   providers: [],
   bootstrap: [AppComponent]
