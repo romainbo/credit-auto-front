@@ -1,0 +1,22 @@
+<ng-container *ngIf="rateArray">
+            <table class="table tbale-stripped">
+                    <ng-container *ngFor="let item of rateArray">
+                        <div class="form-group">    
+                            <tr>
+                                <td>
+                                {{item.rateName}}
+                                </td>
+                                <td>
+                                {{item.rateValue}}
+                                </td>
+                            </tr>
+                        </div>
+                  </ng-container>
+              <div class="d-flex justify-content-center align-items-center">
+            <button type="submit" class="btn  btn-outline-primary mr-4 my-4">
+                <a [routerLink]="['/rateModification']" [state]="{allRate: rateArray}">Modifier Taux</a>
+            </button>
+              </div>
+            </table>         
+</ng-container>
+

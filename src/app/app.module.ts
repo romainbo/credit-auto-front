@@ -9,6 +9,7 @@ import {NavigationModule} from "./navigation/navigation.module";
 import {ClientCreationModule} from "./client-creation/client-creation.module";
 import {ClientSearchModule} from "./client-search/client-search.module";
 import { ContractModule } from './contract/contract.module';
+import { RateModule } from './rate/rate.module';
 import * as moment from 'moment';
 
 @NgModule({
@@ -22,6 +23,7 @@ import * as moment from 'moment';
     ClientCreationModule,
     ClientSearchModule,
     ContractModule,
+    RateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

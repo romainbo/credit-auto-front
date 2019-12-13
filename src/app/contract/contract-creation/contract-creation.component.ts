@@ -51,16 +51,7 @@ test: any;
     this.contract.closureDate = null;
   }
 
-  submitContract(contract: Contract){
-    /*this.contract = new ContractModule();
-    this.contract.returnedClient = this.client;
-    this.contract.returnedSimulation = this.simulation;
-    this.contract.contractNumber = 3489;
-    this.mtnt = moment();
-
-    this.contract.paymentStartDate = moment().format('YYYY-MM-DD');
-    this.contract.paymentEndDate = (this.mtnt.add(this.contract.returnedSimulation.loanDuration, 'months')).format('YYYY-MM-DD');
-    this.contract.closureDate = null;*/    
+  submitContract(contract: Contract){   
     this.contractService.postInformationContract(contract).subscribe(
       response => {
         console.log(response);
