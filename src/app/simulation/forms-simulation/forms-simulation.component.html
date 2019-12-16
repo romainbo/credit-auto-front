@@ -26,7 +26,9 @@
               type="number"
               class="form-control"
               id="loanAmountId"
-              name="loanAmount"
+              name="quantity"
+              min="10000"
+              max="25000"
               required
               formControlName="loanAmount"
             />
@@ -98,7 +100,6 @@
         </ng-container>
         <p>Echeancier</p>
         <ng-container *ngIf="returnedSimulation?.monthlyPayment">
-
           {{ returnedSimulation.monthlyPayment }}
         </ng-container>
       </div>
