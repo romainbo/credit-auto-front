@@ -14,6 +14,7 @@ import * as moment from 'moment';
 import { IsSignedInGuard } from './authentication/is-signed-in.guard';
 import { ManagerModule } from './manager/manager.module';
 import { AdminModule } from './admin/admin.module';
+import { ClientDisplayModule } from './client-display/client-display.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,7 +30,8 @@ import { AdminModule } from './admin/admin.module';
     ContractModule,
     ManagerModule,
     AdminModule,
-    ManagerModule
+    ManagerModule,
+    ClientDisplayModule
   ],
   providers: [IsSignedInGuard],
   bootstrap: [AppComponent]

@@ -16,10 +16,6 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto" *ngIf="loginService.isLoginValid == true">
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="#">Accueil</a>
-      </li> -->
-
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/simulation']">Simulation</a>
       </li>
@@ -39,15 +35,6 @@
       <li class="nav-item" *ngIf="loginService.role == 'ADMIN'">
         <a class="nav-link" [routerLink]="['/rates']">Gestion des taux</a>
       </li>
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="#">Gestion des loueurs</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Statistiques</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Gestion des taux</a>
-      </li> -->
     </ul>
   </div>
 </nav>

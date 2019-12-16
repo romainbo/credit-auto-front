@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 import { User } from '../user';
@@ -18,8 +18,8 @@ export class FormsLoginComponent implements OnInit {
   isSignedInGuard: IsSignedInGuard;
 
   loginForm = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl('')
+    username: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required)
   });
 
   constructor(
@@ -40,7 +40,7 @@ export class FormsLoginComponent implements OnInit {
       console.log(response);
       if (response) {
         this.clientCreationService.isLoginValid = true;
-        //this.user.isLoginValid = true;
+        // this.user.isLoginValid = true;
         this.user.role = (response as unknown) as Role;
         this.clientCreationService.role = this.user.role;
         this.router.navigate(['./simulation']);

@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FormClientSearchComponent } from './form-client-search/form-client-search.component';
 import { IsSignedInGuard } from '../authentication/is-signed-in.guard';
+import { ClientComponent } from './client/client.component';
 
 const routes: Routes = [
   {
-    path: 'searchclient',
-    component: FormClientSearchComponent,
-    canActivate: [IsSignedInGuard]
+    path: 'client/:id',
+    component: ClientComponent
+    // canActivate: [IsSignedInGuard]
   }
 ];
 
@@ -15,4 +15,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ClientSearchRoutingModule {}
+export class ClientDisplayRoutingModule {}

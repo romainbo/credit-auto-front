@@ -4,7 +4,12 @@ import { RatesComponent } from './rates/rates.component';
 import { IsSignedInGuard } from '../authentication/is-signed-in.guard';
 
 const routes: Routes = [
-  { path: 'rates', component: RatesComponent, canActivate: [IsSignedInGuard] }
+  {
+    path: 'rates',
+    component: RatesComponent,
+    canActivate: [IsSignedInGuard]
+    //data: { roles: ['MANAGER'] }
+  }
 ];
 
 @NgModule({
