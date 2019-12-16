@@ -11,15 +11,34 @@ export class LoginService {
 
   url = 'http://localhost:8080/creditAuto/login';
 
-  postInformationLogin(user: User): Observable<any> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-        Authorization: 'Basic ' + btoa(user.username + ':' + user.password)
-      })
+  get httpOptions(): { headers: HttpHeaders } {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Accept: 'application/json'
+    });
+    return {
+      headers
     };
-
-    return this.httpClient.get(this.url, httpOptions);
   }
+
+  postLogin(user: User): Observable<User> {
+    return this.httpClient.post<User>(
+      this.url,
+      JSON.stringify(user),
+      this.httpOptions
+    );
+  }
+
+  // Méthode de salim pour test springSecurity
+  // postInformationLogin(user: User): Observable<any> {
+  //   const httpOptions = {
+  //     headers: new HttpHeaders({
+  //       'Content-Type': 'application/json',
+  //       Accept: 'application/json',
+  //       Authorization: 'Basic ' + btoa(user.username + ':' + user.password)
+  //     })
+  //   };
+
+  //   return this.httpClient.get(this.url, httpOptions);
+  // }
 }
