@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { User } from '../authentication/user';
 import { Observable } from 'rxjs';
+import { Role } from '../authentication/role.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,9 @@ export class LoginService {
   constructor(private httpClient: HttpClient) {}
 
   url = 'http://localhost:8080/creditAuto/login';
+
+  isLoginValid = false;
+  role: Role;
 
   get httpOptions(): { headers: HttpHeaders } {
     const headers = new HttpHeaders({

@@ -1,9 +1,8 @@
-import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from "@angular/router";
-import { FormsLoginComponent } from "./forms-login/forms-login.component";
-import { AdminComponent } from './admin/admin.component';
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { FormsLoginComponent } from './forms-login/forms-login.component';
 
-const routes: Routes = [{ path: "login", component: FormsLoginComponent }, { path: "admin", component: AdminComponent }];
+const routes: Routes = [{ path: 'login', component: FormsLoginComponent }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

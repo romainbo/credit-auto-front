@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FormsClientCreationComponent } from './forms-client-creation/forms-client-creation.component';
 import { IsSignedInGuard } from '../authentication/is-signed-in.guard';
+import { StatisticsComponent } from './statistics/statistics.component';
 
 const routes: Routes = [
   {
-    path: 'nouveauClient',
-    component: FormsClientCreationComponent,
+    path: 'statistics',
+    component: StatisticsComponent,
     canActivate: [IsSignedInGuard]
   }
 ];
@@ -15,4 +15,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ClientCreationRoutingModule {}
+export class ManagerRoutingModule {}

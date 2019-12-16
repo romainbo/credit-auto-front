@@ -3,6 +3,8 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 import { User } from '../user';
+import { IsSignedInGuard } from '../is-signed-in.guard';
+import { Role } from '../role.enum';
 
 @Component({
   selector: 'app-forms-login',
@@ -13,7 +15,7 @@ export class FormsLoginComponent implements OnInit {
   username: string;
   password: string;
   user: User;
-  isloginInformationValid = false;
+  isSignedInGuard: IsSignedInGuard;
 
   loginForm = new FormGroup({
     username: new FormControl(''),
@@ -37,10 +39,11 @@ export class FormsLoginComponent implements OnInit {
     this.clientCreationService.postLogin(this.user).subscribe(response => {
       console.log(response);
       if (response) {
-        this.isloginInformationValid = true;
-      }
-      if (this.isloginInformationValid) {
-        this.router.navigate(['./admin']);
+        this.clientCreationService.isLoginValid = true;
+        //this.user.isLoginValid = true;
+        this.user.role = (response as unknown) as Role;
+        this.clientCreationService.role = this.user.role;
+        this.router.navigate(['./simulation']);
       }
     });
   }

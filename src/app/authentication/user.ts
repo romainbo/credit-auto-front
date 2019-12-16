@@ -1,6 +1,10 @@
+import { Role } from './role.enum';
+
 export class User {
   username: String;
   password: String;
+  role: Role;
+  isLoginValid = false;
 
   userFirstname: string;
   userLastname: string;

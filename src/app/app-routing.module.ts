@@ -1,12 +1,13 @@
-import {NgModule} from "@angular/core";
-import {Routes, RouterModule} from "@angular/router";
-import {Simulation} from "./simulation/simulation";
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { IsSignedInGuard } from './authentication/is-signed-in.guard';
 
 const routes: Routes = [
   {
-    path: "",
-    redirectTo: "simulation",
-    pathMatch: "full"
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+    //canActivate: [IsSignedInGuard]
   }
 ];
 
@@ -14,5 +15,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule {}

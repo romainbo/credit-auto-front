@@ -11,6 +11,9 @@ import { ClientSearchModule } from './client-search/client-search.module';
 import { AuthenticationModule } from './authentication/authentication.module';
 import { ContractModule } from './contract/contract.module';
 import * as moment from 'moment';
+import { IsSignedInGuard } from './authentication/is-signed-in.guard';
+import { ManagerModule } from './manager/manager.module';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,9 +26,12 @@ import * as moment from 'moment';
     ClientCreationModule,
     ClientSearchModule,
     AuthenticationModule,
-    ContractModule
+    ContractModule,
+    ManagerModule,
+    AdminModule,
+    ManagerModule
   ],
-  providers: [],
+  providers: [IsSignedInGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
