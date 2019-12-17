@@ -1,5 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
-  <a class="navbar-brand" href="#">Crédit Auto</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
+  <a class="navbar-brand" href="#">
+    <img class="logo ml-3" src="assets/BNP-logo.png" alt=""
+  /></a>
   <button
     class="navbar-toggler"
     type="button"
@@ -13,26 +15,25 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#"
-        >Accueil <span class="sr-only">(current)</span></a
-        >
-      </li>
+    <ul class="navbar-nav ml-auto" *ngIf="loginService.isLoginValid == true">
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/simulation']">Simulation</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/searchclient']">Recherche de client</a>
+        <a class="nav-link" [routerLink]="['/searchclient']"
+          >Recherche client</a
+        >
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Gestion des loueurs</a>
+        <a class="nav-link" [routerLink]="['/nouveauClient']"
+          >Création client</a
+        >
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Statistiques</a>
+      <li class="nav-item" *ngIf="loginService.role == 'MANAGER'">
+        <a class="nav-link" [routerLink]="['/statistics']">Statistiques</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Gestion des taux</a>
+      <li class="nav-item" *ngIf="loginService.role == 'ADMIN'">
+        <a class="nav-link" [routerLink]="['/rates']">Gestion des taux</a>
       </li>
     </ul>
   </div>

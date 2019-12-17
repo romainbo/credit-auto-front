@@ -1,10 +1,12 @@
 <ng-container>
-  <div class="container container-simulation ">
-    <h2 class="my-4 text-center font-weight-normal">
+  <div class="container">
+    <h1 class="my-4 font-weight-normal h3 text-center">
       Simulation de crédit auto
-    </h2>
+    </h1>
+  </div>
+  <div class="container container-simulation border shadow-sm">
     <div class="d-flex ">
-      <div class="col-6">
+      <div class="col-6 my-5">
         <form [formGroup]="simulationForm" (ngSubmit)="submit()">
           <div class="form-group">
             <label for="purchaseAmountId">Montant de l'achat</label>
@@ -38,7 +40,6 @@
             name="category"
             formControlName="vehicleCategory"
           >
-            <option selected>Catégories</option>
             <option value="A">Catégorie A</option>
             <option value="B">Catégorie B</option>
           </select>
@@ -73,9 +74,13 @@
               Simuler
             </button>
             <ng-container *ngIf="isSimulated">
-              <div class="btn btn-outline-success mr-4 my-4">
-                <a [routerLink]="['/searchclient']" [state]="{data: returnedSimulation}">Créer contrat</a>
-              </div>
+              <button
+                class="btn btn-outline-success mr-4 my-4"
+                [routerLink]="['/searchclient']"
+                [state]="{ data: returnedSimulation }"
+              >
+                Créer contrat
+              </button>
             </ng-container>
             <button
               type="reset"
@@ -87,19 +92,30 @@
           </div>
         </form>
       </div>
-      <div class="col-6">
-        <p>Taux calculé</p>
-        <ng-container *ngIf="returnedSimulation?.loanRate">
-          {{ returnedSimulation.loanRate }}
-        </ng-container>
-        <p>Cout total de l'emprunt</p>
-        <ng-container *ngIf="returnedSimulation?.loanTotalCost">
-          {{ returnedSimulation.loanTotalCost }}
-        </ng-container>
-        <p>Echeancier</p>
-        <ng-container *ngIf="returnedSimulation?.monthlyPayment">
-
-          {{ returnedSimulation.monthlyPayment }}
+      <div
+        class="d-flex flex-column align-items-center justify-content-around col-6 my-5"
+      >
+        <ng-container *ngIf="isSimulated">
+          <!-- <div class="d-flex flex-column align-items-start"> -->
+          <div>
+            <p class="h5">Taux d'intérêt</p>
+            <p class="h6 text-center mt-3 font-weight-normal">
+              {{ returnedSimulation.loanRate }}
+            </p>
+          </div>
+          <div>
+            <p class="h5">Cout total de l'emprunt</p>
+            <p class="h6 text-center  mt-3 font-weight-normal">
+              {{ returnedSimulation.loanTotalCost }}
+            </p>
+          </div>
+          <div>
+            <p class="h5">Mensualité</p>
+            <p class="h6 text-center  mt-3 font-weight-normal">
+              {{ returnedSimulation.monthlyPayment }}
+            </p>
+          </div>
+          <!-- </div> -->
         </ng-container>
       </div>
     </div>
