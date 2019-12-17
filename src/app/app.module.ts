@@ -31,7 +31,7 @@ import { ClientDisplayModule } from './client-display/client-display.module';
     ManagerModule,
     AdminModule,
     ManagerModule,
-    ClientDisplayModule
+    ClientDisplayModule,
   ],
   providers: [IsSignedInGuard],
   bootstrap: [AppComponent]

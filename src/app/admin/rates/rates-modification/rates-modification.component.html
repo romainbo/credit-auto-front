@@ -1,0 +1,30 @@
+<ng-container *ngIf="rateName">
+    <form [formGroup]="rateForm" (ngSubmit)="submit()">
+        <table>
+                <ng-container>
+                    <div class="form-group">    
+                        <tr>
+                            <td>
+                            {{rateName}}
+                            </td>
+                            <td>
+                            <input type="number"
+                                class="form-control"
+                                name="rateValue"
+                                formControlName="rate"
+                                value="{{rateValue}}"
+                                step="0.1"
+                            />
+                            </td>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <button type="submit" class="btn  btn-outline-primary mr-4 my-4" name="{{ rateName }}">
+                                    Modifier Taux
+                                </button>
+                              </div>
+                        </tr>
+                    </div>
+              </ng-container>
+            
+        </table>        
+        </form>             
+</ng-container>

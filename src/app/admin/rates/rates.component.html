@@ -1,1 +1,29 @@
-<p>rates works!</p>
+<h1 class="text-center">Taux des crédits</h1>
+
+<div class="jumbotron">
+    <div class="container-fluid">
+        <ng-container *ngIf="rateArray">
+            <table class="table tbale-stripped table-responsive text-center mx-auto">
+                    <ng-container *ngFor="let item of rateArray">
+                        <div class="form-group">    
+                            <tr>
+                                <td>
+                                {{item.rateName}}
+                                </td>
+                                <td>
+                                {{item.rateValue}}
+                                </td>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <button type="submit" class="btn  btn-outline-primary mr-4 my-4">
+                                        <a [routerLink]="['/rateModification']" [state]="{rateName: item.rateName, rateValue:  item.rateValue, rateId: item.id}">Modifier Taux</a>
+                                    </button>
+                                </div>
+                            </tr>
+                        </div>
+                  </ng-container>
+              
+            </table>         
+    </ng-container>
+    </div>
+</div>
+
