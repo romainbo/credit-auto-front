@@ -10,7 +10,6 @@ import { ClientCreationModule } from './client-creation/client-creation.module';
 import { ClientSearchModule } from './client-search/client-search.module';
 import { AuthenticationModule } from './authentication/authentication.module';
 import { ContractModule } from './contract/contract.module';
-import { RateModule } from './rate/rate.module';
 import * as moment from 'moment';
 import { IsSignedInGuard } from './authentication/is-signed-in.guard';
 import { ManagerModule } from './manager/manager.module';
@@ -29,11 +28,10 @@ import { ClientDisplayModule } from './client-display/client-display.module';
     ClientSearchModule,
     AuthenticationModule,
     ContractModule,
-    RateModule
     ManagerModule,
     AdminModule,
     ManagerModule,
-    ClientDisplayModule
+    ClientDisplayModule,
   ],
   providers: [IsSignedInGuard],
   bootstrap: [AppComponent]

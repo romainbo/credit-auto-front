@@ -2,15 +2,17 @@ import { Component, OnInit, OnChanges, Input } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, NgForm } from '@angular/forms';
 import { RateService } from 'src/app/services/rate.service';
 import { Router } from '@angular/router';
-import { Rate } from '../rate';
 import { isEmpty } from 'rxjs/operators';
+import { Rate } from '../rate';
+
+
 
 @Component({
-  selector: 'app-rate-modification',
-  templateUrl: './rate-modification.component.html',
-  styleUrls: ['./rate-modification.component.scss']
+  selector: 'app-rates-modification',
+  templateUrl: './rates-modification.component.html',
+  styleUrls: ['./rates-modification.component.scss']
 })
-export class RateModificationComponent implements OnInit {
+export class RatesModificationComponent implements OnInit {
   rates : any;
   rateFormValue;
   rateName: string;
@@ -52,6 +54,7 @@ export class RateModificationComponent implements OnInit {
       this.rateService.sendRate(this.rateObject).subscribe(
         response => {
           console.log(response);
+          this.router.navigateByUrl('rates');
         },
         error => {
           console.log(error);
