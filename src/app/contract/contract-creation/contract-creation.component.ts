@@ -34,6 +34,7 @@ test: any;
   ngOnInit() {
     this.simulation = window.history.state.simu;
     this.client = window.history.state.data;
+    
     this.contract = new Contract();
     this.contract.client = this.client;
     //this.contract.returnedSimulation = this.simulation;

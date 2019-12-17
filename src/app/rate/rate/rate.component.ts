@@ -14,7 +14,7 @@ export class RateComponent implements OnInit {
   rate: number;
   rateArray: any;
 
-  rateForm = new FormGroup(
+ rateForm = new FormGroup(
     {
       name: new FormControl(""),
       rate: new FormControl("")

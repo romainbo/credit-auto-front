@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { RateRoutingModule } from './rate-routing.module';
 import { RateComponent } from './rate/rate.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule, NgForm } from '@angular/forms';
 import { RateModificationComponent } from './rate-modification/rate-modification.component';
 
 
@@ -12,6 +12,7 @@ import { RateModificationComponent } from './rate-modification/rate-modification
   imports: [
     CommonModule,
     RateRoutingModule,
+    FormsModule,
     ReactiveFormsModule
   ]
 })
