@@ -13,13 +13,14 @@ import { Contract } from '../contract';
   styleUrls: ['./contract-creation.component.scss']
 })
 export class ContractCreationComponent implements OnInit {
-simulation: Simulation;
-client: Client;
-contract: Contract;
-dateTemp: number;
-mtnt: any;
-test: any;
-/*contractNumber: number;
+  simulation: Simulation;
+  client: Client;
+  contract: Contract;
+  returnedContrat: Contract;
+  dateTemp: number;
+  mtnt: any;
+  test: any;
+  /*contractNumber: number;
   paymentStartDate: string;
   paymentEndDate: string;
   closureDate: string;
@@ -28,15 +29,17 @@ test: any;
   returnedClient: Client;
   returnedSimulation: Simulation;*/
 
-
   constructor(private contractService: ContractService) {}
 
   ngOnInit() {
     this.simulation = window.history.state.simu;
     this.client = window.history.state.data;
+    console.log(this.simulation);
+    console.log(this.client);
+
     this.contract = new Contract();
     this.contract.client = this.client;
-    //this.contract.returnedSimulation = this.simulation;
+    // this.contract.returnedSimulation = this.simulation;
     this.contract.loanDuration = this.simulation.loanDuration;
     this.contract.purchaseAmount = this.simulation.purchaseAmount;
     this.contract.loanTotalCost = this.simulation.loanTotalCost;
@@ -47,11 +50,16 @@ test: any;
     this.contract.loanAmount = this.simulation.loanAmount;
     this.mtnt = moment();
     this.contract.paymentStartDate = moment().format('YYYY-MM-DD');
-    this.contract.paymentEndDate = (this.mtnt.add(this.contract.loanDuration, 'months')).format('YYYY-MM-DD');
+    this.contract.paymentEndDate = this.mtnt
+      .add(this.contract.loanDuration, 'months')
+      .format('YYYY-MM-DD');
     this.contract.closureDate = null;
+
+    console.log(this.simulation);
+    console.log(this.client);
   }
 
-  submitContract(contract: Contract){
+  submitContract(contract: Contract) {
     /*this.contract = new ContractModule();
     this.contract.returnedClient = this.client;
     this.contract.returnedSimulation = this.simulation;
@@ -60,15 +68,15 @@ test: any;
 
     this.contract.paymentStartDate = moment().format('YYYY-MM-DD');
     this.contract.paymentEndDate = (this.mtnt.add(this.contract.returnedSimulation.loanDuration, 'months')).format('YYYY-MM-DD');
-    this.contract.closureDate = null;*/    
+    this.contract.closureDate = null;*/
     this.contractService.postInformationContract(contract).subscribe(
       response => {
-        console.log(response);
+        this.returnedContrat = response;
+        console.log(this.returnedContrat);
       },
       error => {
         console.log(error);
       }
     );
   }
-
 }
